@@ -20,7 +20,12 @@ public class ArvoreBinariaCodigoMorse {
         arvoreBinariaMorse.inserir(".-", "A");
         arvoreBinariaMorse.inserir("-.", "N");
         arvoreBinariaMorse.inserir("--", "M");
-        arvoreBinariaMorse.imprimir(arvoreBinariaMorse.raiz);
+        arvoreBinariaMorse.inserir("..-.", "F");
+        arvoreBinariaMorse.inserir("-----", "0");
+        arvoreBinariaMorse.inserir(".....", "5");
+        arvoreBinariaMorse.inserir(".----", "1");
+        arvoreBinariaMorse.inserir("-....", "6");
+        arvoreBinariaMorse.imprimir(arvoreBinariaMorse.raiz, "");
         
     }
     
