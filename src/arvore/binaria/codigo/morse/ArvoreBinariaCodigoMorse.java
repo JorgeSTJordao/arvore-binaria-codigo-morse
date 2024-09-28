@@ -11,22 +11,36 @@ public class ArvoreBinariaCodigoMorse {
         Para evitar um loop infinito, isso será correspondente ao tamanho
         */
         
+    String[][] alfabetoMorse = {
+                //Alfabeto
+                {"A", ".-"},   {"B", "-..."}, {"C", "-.-."}, {"D", "-.."}, 
+                {"E", "."},    {"F", "..-."}, {"G", "--."},  {"H", "...."}, 
+                {"I", ".."},   {"J", ".---"}, {"K", "-.-"},  {"L", ".-.."}, 
+                {"M", "--"},   {"N", "-."},   {"O", "---"},  {"P", ".--."}, 
+                {"Q", "--.-"}, {"R", ".-."},  {"S", "..."},  {"T", "-"}, 
+                {"U", "..-"},  {"V", "...-"}, {"W", ".--"},  {"X", "-..-"}, 
+                {"Y", "-.--"}, {"Z", "--.."},
+                // Números
+                {"0", "-----"},{"1", ".----"},{"2", "..---"},{"3", "...--"},
+                {"4", "....-"},{"5", "....."},{"6", "-...."},{"7", "--..."},
+                {"8", "---.."},{"9", "----."}
+            };
+
         ArvoreBinariaMorse arvoreBinariaMorse = new ArvoreBinariaMorse();
         arvoreBinariaMorse.inicializar();
         
-        arvoreBinariaMorse.inserir(".", "E");
-        arvoreBinariaMorse.inserir("-", "T");
-        arvoreBinariaMorse.inserir("..", "I");
-        arvoreBinariaMorse.inserir(".-", "A");
-        arvoreBinariaMorse.inserir("-.", "N");
-        arvoreBinariaMorse.inserir("--", "M");
-        arvoreBinariaMorse.inserir("..-.", "F");
-        arvoreBinariaMorse.inserir("-----", "0");
-        arvoreBinariaMorse.inserir(".....", "5");
-        arvoreBinariaMorse.inserir(".----", "1");
-        arvoreBinariaMorse.inserir("-....", "6");
-        arvoreBinariaMorse.imprimir(arvoreBinariaMorse.raiz, "");
+        // Exibindo o array lado a lado
+        for (String[] item : alfabetoMorse) {
+            arvoreBinariaMorse.inserir(item[1], item[0]);
+        }
         
+        arvoreBinariaMorse.inicializarImpressao();
+        
+        FormsArvoreBinariaCodigoMorse formsArvoreBinariaCodigoMorse = 
+                new FormsArvoreBinariaCodigoMorse(arvoreBinariaMorse);
+        
+        //Inicia o loop do forms
+        formsArvoreBinariaCodigoMorse.responder();
     }
     
 }

@@ -25,7 +25,7 @@ public class ArvoreBinariaMorse {
     }
     
     //O código atual corresponde ao código criado no momento 
-    public Node preOrdem(Node atual, String codigo_morse, String caractere, String codigoAtual, int nivel){
+    private Node preOrdem(Node atual, String codigo_morse, String caractere, String codigoAtual, int nivel){
         //Verifica se o nó é diferente de nulo
         if (atual != null){
             
@@ -74,10 +74,14 @@ public class ArvoreBinariaMorse {
     
     //Para mostrar os nós de espaço vazio (...), mostramos também os nós sem caractere
     //Para cada ida acrescentamos um sinal "-"
-    public void imprimir(Node node, String espaco){
+    public void inicializarImpressao(){
+        imprimir(raiz, "");
+    }
+    
+    private void imprimir(Node node, String espaco){
         if (node != null){
             System.out.println("|" + espaco + node.getEstruturaCaractere());
-            
+
             imprimir(node.getEsquerda(), espaco + "-");
             imprimir(node.getDireita(), espaco + "-");
         }
