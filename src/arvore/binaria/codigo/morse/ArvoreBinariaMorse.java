@@ -86,4 +86,22 @@ public class ArvoreBinariaMorse {
             imprimir(node.getDireita(), espaco + "-");
         }
     }
+    
+    public String buscar(String codigo_morse) {
+        Node atual = raiz;
+
+        for (char simbolo : codigo_morse.toCharArray()) {
+            if (simbolo == '.') {
+                atual = atual.getEsquerda();
+            } else if (simbolo == '-') {
+                atual = atual.getDireita();
+            }
+
+            if (atual == null) {
+                return null; // Retorna nulo se o código não for encontrado
+            }
+        }
+
+        return atual.getEstruturaCaractere(); // Retorna o caractere encontrado
+    }
 }

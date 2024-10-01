@@ -1,6 +1,12 @@
 package arvore.binaria.codigo.morse;
 
 public class ArvoreBinariaCodigoMorse {
+    
+    /*
+    Desenvolvedores:
+    - Bruno Mezzomo Rodrigues Klemz
+    - Jorge Samuel Teixeira Jordão
+    */
 
     public static void main(String[] args) {
         /*A árvore é formado pelo código morse
